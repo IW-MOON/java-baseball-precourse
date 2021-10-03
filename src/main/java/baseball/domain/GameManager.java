@@ -11,9 +11,6 @@ public class GameManager {
         for (int index = 0; index < GameRule.NUMBER_OF_DIGITS ; index++) {
             checkAnswer(randomNumber, inputNumber, baseBall, index);
         }
-        if (baseBall.getStrike() == 0 && baseBall.getBall() == 0) {
-            return GameMessage.NOTHING_MSG;
-        }
         return GameMessage.hitStrikeBallMsg(baseBall.getStrike(), baseBall.getBall());
     }
 

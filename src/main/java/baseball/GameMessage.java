@@ -11,6 +11,8 @@ public class GameMessage {
     public final static String ERR_MSG = "[ERROR]";
 
     public static String hitStrikeBallMsg(int strike, int ball) {
+        if(strike == 0 && ball == 0)
+            return NOTHING_MSG;
         if(ball == 0)
             return String.format("%d%s",  strike, GameMessage.STRIKE_MSG);
         if(strike == 0)
