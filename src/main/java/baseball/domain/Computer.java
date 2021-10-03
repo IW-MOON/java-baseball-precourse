@@ -8,7 +8,7 @@ import java.util.*;
 public class Computer {
 
     public String generateRandomNumber() {
-        Set<String> numberSet = new HashSet<>();
+        Set<String> numberSet = new LinkedHashSet<>();
         while (numberSet.size() < GameRule.NUMBER_OF_DIGITS) {
             int randomNumber = Randoms.pickNumberInRange(GameRule.RANDOM_START_NUMBER, GameRule.RANDOM_END_NUMBER);
             numberSet.add(String.valueOf(randomNumber));
