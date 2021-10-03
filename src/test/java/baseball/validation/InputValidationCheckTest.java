@@ -24,4 +24,19 @@ public class InputValidationCheckTest {
         assertThatCode(() -> InputValidationCheck.gameNumberValidationCheck(inputNumber)).doesNotThrowAnyException();
     }
 
+    @DisplayName("게임 종료 후 사용자로부터 입력받은 값이 1,2 외의 값임을 검증한다.")
+    @ParameterizedTest
+    @CsvSource(value = {"3", "a"})
+    void 계속_사용자임력검증_실패(String inputNumber) {
+        assertThrows(IllegalArgumentException.class, () -> InputValidationCheck.isContinueGameCheck(inputNumber));
+    }
+
+    @DisplayName("게임 종료 후 사용자로부터 입력받은 값이 1,2 외의 값임을 검증한다.")
+    @ParameterizedTest
+    @CsvSource(value = {"1", "2"})
+    void 계속_사용자임력검증_성공(String inputNumber) {
+        assertThatCode(() -> InputValidationCheck.isContinueGameCheck(inputNumber)).doesNotThrowAnyException();
+    }
+
+
 }
