@@ -19,3 +19,20 @@
 * Class3. (Model) 게임의 핵심로직인 스트라이크/볼/낫싱 검증
 * Class4. (Model) 스트라이브/볼을 관리하는 VO
 * Class5. (Model) 사용자 입력이 적절한지 검증
+
+## 구현내용 점검
+1. baseball 
+* Application.java : 사용자 입력에 따른 서비스 호출 및 결과 값을 출력
+* GameMessage.java : 게임 중에 노출되는 메세지 정보 관리
+* GameRule.java : 게임 관련 룰 정보 관리
+
+2. baseball.domain
+* Client.java : 사용자의 행위에 관한 역할을 담당
+* Computer.java : 컴퓨터의 행위에 관한 역할을 담당
+* GameManager.java : 게임진행관련 주된 역할(스트라이크/볼/낫싱 판정)을 담당
+
+3. baseball.dto
+* BaseBall.java : 진행되는 게임의 상태를 관리하는 역할을 담당
+
+4. baseball.validation
+* InputValidationCheck.java : 사용자 입력이 적절함을 판단하는 기능을 담당
