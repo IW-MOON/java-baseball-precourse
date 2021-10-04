@@ -14,10 +14,14 @@ public class InputValidationCheck {
 
     }
     public static void gameNumberValidationCheck(String inputNumber)  {
-        if(inputNumber.length() != 3 || isDuplicateNumber(inputNumber)
-                || !inputNumber.matches("["+ GameRule.RANDOM_START_NUMBER + "-" + GameRule.RANDOM_END_NUMBER + "]{" + GameRule.NUMBER_OF_DIGITS +"}")
-        ){
-            throw new IllegalArgumentException(GameMessage.invalidInputMsg("3자리 수 중복되지 않는 수로 입력해주세요."));
+        if(inputNumber.length() != 3){
+            throw new IllegalArgumentException(GameMessage.invalidInputMsg("3자리 숫자로 입력해주세요."));
+        }
+        if(isDuplicateNumber(inputNumber)){
+            throw new IllegalArgumentException(GameMessage.invalidInputMsg("중복되지 않는 3자리 숫자로 입력해주세요."));
+        }
+        if(!inputNumber.matches("["+ GameRule.RANDOM_START_NUMBER + "-" + GameRule.RANDOM_END_NUMBER + "]{" + GameRule.NUMBER_OF_DIGITS +"}")){
+            throw new IllegalArgumentException(GameMessage.invalidInputMsg("1~9 사이의 수로 3자리만 입력 가능합니다."));
         }
     }
 
